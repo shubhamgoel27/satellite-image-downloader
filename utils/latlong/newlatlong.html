@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+</head>
+<body>
+<!-- 	<form id="myform">
+		<input type="text" name="lat" id="lat">
+		<input type="text" name="lng" id="lng">
+		<input id="mybutton" type="submit" name="submit">
+	 
+
+	</form> -->
+
+	<div id="mydiv"></div>
+
+
+	<script>
+
+		// $.ajax({
+		//   url: url,
+		//   dataType: "script",
+		//   success: null
+		// });
+
+		// maxZoomService = new google.maps.MaxZoomService();
+
+		// latlang = {lat: 28.555168, lng: 77.252658}
+		// var zoomValue = maxZoomService.getMaxZoomAtLatLng(latlang, function(response) {
+		//           if (response.status !== 'OK') {
+		//             return -1;
+		//           } else {
+		//             return response.zoom;
+		//           }
+		      
+		// });
+		// $("#myform").submit(function(){
+
+		// 	    var $inputs = $('#myForm :input');
+		// 	    var values = {};
+		// 	    $inputs.each(function() {
+		// 	        values[this.name] = $(this).val();
+  //   			});
+		// 		initialize(values);
+
+		// });
+
+		// function final(){
+		// 	document.getElementById('myform').addEventListener('submit', function(event){
+		// 		event.preventDefault();
+		// 		initialize()});
+		// }
+		latlong = {lat: 28.555168, lng: 77.252658};
+		// latlong = {lat:{{}}, long:{{}}};
+		function initialize() {
+
+			// var $inputs = $('#myform :input');
+		 //    var latlong = {};
+		 //    $inputs.each(function() {
+		 //        latlong[this.name] = $(this).val();
+			// });
+			// var latlong = {};
+			// latlong["lat"] = document.getElementById('lat').value;
+			// latlong["lng"] = document.getElementById('lng').value;
+			// console.log(latlong.lat);
+			maxZoomService = new google.maps.MaxZoomService();
+			
+			var zoomValue = maxZoomService.getMaxZoomAtLatLng(new google.maps.LatLng(latlong.lat, latlong.lng), function(response) {
+			      // console.log(response.zoom);
+			      // console.log(response.status);
+		          if (response.status != "OK") {
+		            return -1;
+		          } else {
+		          	// document.getElementById("baba").text = "response.zoom";
+		          	console.log(response.zoom);
+		          	// var node = document.createElement("p");
+		          	// node.text = "babablacksheep";
+		          	// document.write('jdjdjd');
+		          	// document.body.appendChild(node);
+		          	postscribe('#mydiv', response.zoom);
+
+		            return response.zoom;
+		          }
+	
+			});
+		}
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx2tKaiqlI6p7xgpCXKhiw3NZHb0mXhI&callback=initialize"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
