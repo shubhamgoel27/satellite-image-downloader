@@ -46,7 +46,7 @@ prometheus-client==0.7.1
 prompt-toolkit==1.0.15
 ptyprocess==0.6.0
 pycparser==2.19
-Pygments==2.4.2
+Pygments==2.7.4
 pyOpenSSL==18.0.0
 PySocks==1.6.8
 python-dateutil==2.7.3
