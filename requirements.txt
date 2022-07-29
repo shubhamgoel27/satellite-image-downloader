@@ -30,7 +30,7 @@ jupyter-client==5.2.3
 jupyter-console==5.2.0
 jupyter-core==4.5.0
 MarkupSafe==1.0
-mistune==0.8.3
+mistune==2.0.3
 mkl-fft==1.0.6
 mkl-random==1.0.1
 nbconvert==5.5.0
